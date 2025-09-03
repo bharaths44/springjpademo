@@ -1,15 +1,12 @@
 package com.bharath.springjpademo.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -35,11 +32,14 @@ public class Author {
 
 	private int age;
 
-	@Column(updatable = false, nullable = false)
-	private LocalDateTime createdAt;
+//	@Column(updatable = false, nullable = false)
+//	private LocalDateTime createdAt;
+//
+//	@Column(insertable = false)
+//	private LocalDateTime updatedAt;
 
-	@Column(insertable = false)
-	private LocalDateTime updatedAt;
 
+	@ManyToMany(mappedBy = "authors")
+	private List<Course> courses;
 
 }
