@@ -1,26 +1,22 @@
 package com.bharath.springjpademo.models;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity
 // @Table(name = "author_tbl")
-public class Author {
+public class Author extends BaseEntity {
 
-	@Id
-	@GeneratedValue
-//			(strategy = GenerationType.SEQUENCE, generator = "author_sequence")
-//	@SequenceGenerator(name = "author_sequence", sequenceName = "author_sequence", allocationSize = 1)
-	private Integer Id;
 
 	@Column(name = "f_name")
 	private String firstName;
