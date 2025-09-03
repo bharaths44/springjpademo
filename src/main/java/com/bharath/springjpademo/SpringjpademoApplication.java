@@ -15,20 +15,20 @@ public class SpringjpademoApplication {
 		SpringApplication.run(SpringjpademoApplication.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner commandLineRunner(AuthorRepository repository,
-											   VideoRepository videoRepository) {
-		return args -> {
-//			var author = Author.builder()
-//							   .firstName("Bharath")
-//							   .lastName("S")
-//							   .age(21)
-//							   .email("bharathsatheesan@gmail.com")
-//							   .build();
-//			repository.save(author);
-			var video = Video.builder().name("abc").length(5).build();
-			videoRepository.save(video);
-		};
-	}
+//	@Bean
+//	public CommandLineRunner commandLineRunner(AuthorRepository repository,
+//											   VideoRepository videoRepository) {
+//		return args -> {
+////			var author = Author.builder()
+////							   .firstName("Bharath")
+////							   .lastName("S")
+////							   .age(21)
+////							   .email("bharathsatheesan@gmail.com")
+////							   .build();
+////			repository.save(author);
+//			var video = Video.builder().name("abc").length(5).build();
+//			videoRepository.save(video);
+//		};
+//	}
 
 }
