@@ -42,6 +42,8 @@ public class SpringjpademoApplication {
 
 			// update Author a set a.age=22 where a.id=1
 			repository.updateAuthor(22,1);
+
+			repository.findByNamedQuery(22);
 		};
 	}
 

@@ -1,9 +1,10 @@
 package com.bharath.springjpademo.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
-import lombok.*;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.util.List;
@@ -14,6 +15,22 @@ import java.util.List;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
+//@NamedQuery(name = "Author.findByNamedQuery", query = "select a from Author a where a.age>=20")
+//@NamedQuery(name = "Author.updateByNamedQuery", query = "update Author a set a.age=:age where a.id =:id")
+
+@NamedQueries(
+		{
+				@NamedQuery(
+						name = "Author.findByNamedQuery",
+						query = "select a from Author a where a.age>=20"
+				),
+				@NamedQuery(
+						name = "Author.updateByNamedQuery",
+						query = "update Author a set a.age=:age where a.id =:id"
+				)
+
+		}
+)
 // @Table(name = "author_tbl")
 public class Author extends BaseEntity {
 
